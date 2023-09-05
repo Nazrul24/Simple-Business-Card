@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -99,25 +100,62 @@ fun BusinessCard(
             Column(
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(top=30.dp),
+                    .padding(top = 30.dp),
                 verticalArrangement = Arrangement.Top
             ) {
 
-                Text(
-                    text = email,
-                    modifier = Modifier.padding(4.dp),
-                    fontSize = 16.sp
-                )
-                Text(
-                    text = linkedin,
-                    modifier = Modifier.padding(4.dp),
-                    fontSize = 16.sp
-                )
-                Text(
-                    text = phone,
-                    modifier = Modifier.padding(4.dp),
-                    fontSize = 16.sp
-                )
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier.padding(bottom = 4.dp)
+                ) {
+                    Image(
+                        painter = painterResource(id = R.drawable.mail),
+                        contentDescription = "Email Logo",
+                        modifier = Modifier
+                            .size(20.dp)
+
+                    )
+                    Text(
+                        text = email,
+                        modifier = Modifier.padding(start = 8.dp),
+                        fontSize = 18.sp
+                    )
+                }
+
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier.padding(bottom = 4.dp)
+                ) {
+                    Image(
+                        painter = painterResource(id = R.drawable.linkedin),
+                        contentDescription = "Linkedin Logo",
+                        modifier = Modifier
+                            .size(20.dp)
+
+                    )
+                    Text(
+                        text = linkedin,
+                        modifier = Modifier.padding(start = 8.dp),
+                        fontSize = 18.sp
+                    )
+                }
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier.padding(bottom = 4.dp)
+                ) {
+                    Image(
+                        painter = painterResource(id = R.drawable.mobile_phone_icon),
+                        contentDescription = "Phone Logo",
+                        modifier = Modifier
+                            .size(20.dp)
+
+                    )
+                    Text(
+                        text = phone,
+                        modifier = Modifier.padding(start = 8.dp),
+                        fontSize = 18.sp
+                    )
+                }
             }
 
 
